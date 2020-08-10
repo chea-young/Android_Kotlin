@@ -15,7 +15,7 @@ class SubActivity : AppCompatActivity() {
             //서브 액티비티의 존재하는 텍스트뷰에다가 text가 넘겨져 온다.
         }
         button_toast.setOnClickListener {
-            iv_profile.setImageResource(R.drawable.robot_1)
+            iv_profile.setImageResource(R.drawable.robot_1) //R이 res
             Toast.makeText(this@SubActivity, "버튼이 클릭 되었습니다.", Toast.LENGTH_SHORT).show()
         }
     }

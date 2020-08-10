@@ -25,5 +25,11 @@ class MainActivity : AppCompatActivity() { // 앱이 최초 실행했을 때 수
             startActivity(intent)
             finish()
         }
+
+        button_list.setOnClickListener {
+            val intent = Intent(this, ListActivity::class.java)// 다음 화면으로 이동
+            startActivity(intent)
+            finish()
+        }
     }
 }
