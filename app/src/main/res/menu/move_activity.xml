@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/one"
+            android:icon="@drawable/ic_baseline_filter_1_24"
+            android:title="서브 화면으로 이동"/>
+
+        <item android:id="@+id/two"
+            android:icon="@drawable/ic_baseline_filter_2_24"
+            android:title="리스트뷰로 가기"/>
+
+        <item android:id="@+id/three"
+        android:icon="@drawable/ic_baseline_filter_3_24"
+        android:title="DB 페이지로 이동"/>
+
+        <item android:id="@+id/four"
+            android:icon="@drawable/ic_baseline_filter_4_24"
+            android:title="네비게이터뷰로 이동"/>
+
+        <item android:id="@+id/five"
+            android:icon="@drawable/ic_baseline_filter_5_24"
+            android:title="웹사이트뷰로 이동"/>
+    </group>
+
+</menu>
