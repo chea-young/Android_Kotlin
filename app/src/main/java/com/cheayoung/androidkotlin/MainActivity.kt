@@ -38,5 +38,11 @@ class MainActivity : AppCompatActivity() { // 앱이 최초 실행했을 때 수
             finish()
         }
 
+        button_db.setOnClickListener {
+            val intent = Intent(this, DBActivity::class.java)// 다음 화면으로 이동
+            startActivity(intent)
+            finish()
+        }
+
     }
 }
