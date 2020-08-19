@@ -73,8 +73,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.895"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.911" />
+            app:layout_constraintTop_toBottomOf="@+id/button_web"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/button_list"
@@ -84,8 +84,10 @@
             android:text="리스트뷰로 가기"
             app:layout_constraintBottom_toTopOf="@+id/et_id"
             app:layout_constraintEnd_toStartOf="@+id/button_next"
+            app:layout_constraintHorizontal_bias="0.446"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/button_web"
+            app:layout_constraintVertical_bias="0.072" />
 
         <Button
             android:id="@+id/button_nabi"
@@ -113,6 +115,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.988" />
 
+        <Button
+            android:id="@+id/button_web"
+            android:layout_width="129dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="160dp"
+            android:text="웹사이트 뷰로 사기"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/btn_navi"
             android:layout_width="50dp"
@@ -123,6 +136,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/ic_baseline_menu_64" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/naviView"

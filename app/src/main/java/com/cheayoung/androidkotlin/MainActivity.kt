@@ -58,6 +58,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             finish()
         }
 
+        button_web.setOnClickListener {
+            val intent = Intent(this, WebSiteActivity::class.java)// 다음 화면으로 이동
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
