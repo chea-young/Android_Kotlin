@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RecyclerActivity"></activity>
+        <activity android:name=".FragmentActivity"></activity>
+        <activity android:name=".RecyclerActivity" />
         <activity android:name=".WebSiteActivity" />
         <activity android:name=".DBActivity" />
         <activity android:name=".NavigationActivity" />

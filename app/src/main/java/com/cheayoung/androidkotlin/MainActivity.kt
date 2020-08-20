@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.btn_navi
 import kotlinx.android.synthetic.main.activity_main.layout_drawer
 import kotlinx.android.synthetic.main.activity_main.naviView
-import kotlinx.android.synthetic.main.activity_navigation.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener { // 앱이 최초 실행했을 때 수행.
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +59,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         button_web.setOnClickListener {
             val intent = Intent(this, WebSiteActivity::class.java)// 다음 화면으로 이동
+            startActivity(intent)
+            finish()
+        }
+
+        button_fragment.setOnClickListener {
+            val intent = Intent(this, FragmentActivity::class.java)// 다음 화면으로 이동
             startActivity(intent)
             finish()
         }
