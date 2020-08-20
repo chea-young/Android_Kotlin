@@ -1,5 +1,6 @@
 package com.cheayoung.androidkotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
@@ -27,6 +28,12 @@ class CustomListviewActivity : AppCompatActivity() {
         listView_custom.onItemClickListener = AdapterView.OnItemClickListener{ parent, view, position, id ->
             val selectItem = parent.getItemAtPosition(position) as User
             Toast.makeText(this, selectItem.name, Toast.LENGTH_SHORT).show()
+        }
+
+        button_recycler.setOnClickListener {
+            val intent = Intent(this, RecyclerActivity::class.java)// 다음 화면으로 이동
+            startActivity(intent)
+            finish()
         }
 
     }

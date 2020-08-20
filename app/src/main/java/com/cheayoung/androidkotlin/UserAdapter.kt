@@ -1,7 +1,6 @@
 package com.cheayoung.androidkotlin
 
 import android.content.Context
-import android.icu.text.UnicodeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +13,9 @@ class UserAdapter (val context: Context, val UserList: ArrayList<User>):BaseAdap
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View = LayoutInflater.from(context).inflate(R.layout.list_item_user, null)
         val profile = view.findViewById<ImageView>(R.id.iv_profile)
-        val name = view.findViewById<TextView>(R.id.tv_name)
+        val name = view.findViewById<TextView>(R.id.user_name)
         val greet = view.findViewById<TextView>(R.id.tv_greet)
-        val age = view.findViewById<TextView>(R.id.tv_age)
+        val age = view.findViewById<TextView>(R.id.user_age)
 
         val user = UserList[position]
         profile.setImageResource((user.profile))
