@@ -67,73 +67,12 @@
             android:id="@+id/button_next"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginBottom="195dp"
             android:text="서브 화면으로 이동"
-            app:layout_constraintBottom_toTopOf="@+id/button_db"
+            app:layout_constraintBottom_toTopOf="@+id/et_id"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.895"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_web"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/button_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="리스트뷰로 가기"
-            app:layout_constraintBottom_toTopOf="@+id/et_id"
-            app:layout_constraintEnd_toStartOf="@+id/button_next"
-            app:layout_constraintHorizontal_bias="0.446"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_web"
-            app:layout_constraintVertical_bias="0.072" />
-
-        <Button
-            android:id="@+id/button_nabi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="네비게이터뷰로 이동"
-            app:layout_constraintBottom_toTopOf="@+id/tv_title"
-            app:layout_constraintEnd_toStartOf="@+id/button_db"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_list" />
-
-        <Button
-            android:id="@+id/button_db"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="DB 페이지로 이동"
-            app:layout_constraintBottom_toTopOf="@+id/tv_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.82"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.988" />
-
-        <Button
-        android:id="@+id/button_web"
-        android:layout_width="129dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="160dp"
-        android:text="웹사이트 뷰로 사기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button_fragment"
-            android:layout_width="129dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="160dp"
-            android:text="프레그먼트 뷰로 가기"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

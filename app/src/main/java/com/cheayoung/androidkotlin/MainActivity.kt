@@ -39,45 +39,48 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             finish()
         }
 
-        button_list.setOnClickListener {
-            val intent = Intent(this, ListActivity::class.java)// 다음 화면으로 이동
-            startActivity(intent)
-            finish()
-        }
-
-        button_nabi.setOnClickListener {
-            val intent = Intent(this, NavigationActivity::class.java)// 다음 화면으로 이동
-            startActivity(intent)
-            finish()
-        }
-
-        button_db.setOnClickListener {
-            val intent = Intent(this, DBActivity::class.java)// 다음 화면으로 이동
-            startActivity(intent)
-            finish()
-        }
-
-        button_web.setOnClickListener {
-            val intent = Intent(this, WebSiteActivity::class.java)// 다음 화면으로 이동
-            startActivity(intent)
-            finish()
-        }
-
-        button_fragment.setOnClickListener {
-            val intent = Intent(this, FragmentActivity::class.java)// 다음 화면으로 이동
-            startActivity(intent)
-            finish()
-        }
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId)
         {
-            R.id.one -> Toast.makeText(applicationContext, "접근성", Toast.LENGTH_SHORT).show()
-            R.id.two -> Toast.makeText(applicationContext, "이메일", Toast.LENGTH_SHORT).show()
-            R.id.three -> Toast.makeText(applicationContext, "메시지", Toast.LENGTH_SHORT).show()
-
+            R.id.one -> {
+                val intent = Intent(this, SubActivity::class.java)// 다음 화면으로 이동
+                intent.putExtra("msg",tv_title.text.toString()) //msg라는 키로 잠겼다.
+                startActivity(intent)
+                finish()
+                Toast.makeText(applicationContext, "서브 화면으로 이동", Toast.LENGTH_SHORT).show()
+            }
+            R.id.two -> {
+                val intent = Intent(this, ListActivity::class.java)// 다음 화면으로 이동
+                startActivity(intent)
+                finish()
+                Toast.makeText(applicationContext, "리스트뷰로 가기", Toast.LENGTH_SHORT).show()
+            }
+            R.id.three -> {
+                val intent = Intent(this, DBActivity::class.java)// 다음 화면으로 이동
+                startActivity(intent)
+                finish()
+                Toast.makeText(applicationContext, "DB 페이지로 이동", Toast.LENGTH_SHORT).show()
+            }
+            R.id.four -> {
+                val intent = Intent(this, NavigationActivity::class.java)// 다음 화면으로 이동
+                startActivity(intent)
+                finish()
+                Toast.makeText(applicationContext, "네비게이터뷰로 이동", Toast.LENGTH_SHORT).show()
+            }
+            R.id.five -> {
+                val intent = Intent(this, WebSiteActivity::class.java)// 다음 화면으로 이동
+                startActivity(intent)
+                finish()
+                Toast.makeText(applicationContext, "웹사이트뷰로 이동", Toast.LENGTH_SHORT).show()
+            }
+            R.id.six -> {
+                val intent = Intent(this, FragmentActivity::class.java)// 다음 화면으로 이동
+                startActivity(intent)
+                finish()
+                Toast.makeText(applicationContext, "프레그먼트뷰로 이동", Toast.LENGTH_SHORT).show()
+            }
         }
         layout_drawer.closeDrawers()//펼쳐져있는데 네비게이션 drawer 메뉴를 닫아주라
         return false
