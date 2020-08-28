@@ -18,6 +18,6 @@
 - Log 출력하여 디버깅하기
 
 #### 추가적으로 공부할 내용
-- [ ] Navigation View이용하여 Activity 이동하기
+- [X] Navigation View이용하여 Activity 이동하기
 - [ ] 알림을 핸드폰 푸시 알람과 진동과 소리, 효과음 추가
 - [ ] ListView 사용자가 내용을 추가할 수 있도록 하기
