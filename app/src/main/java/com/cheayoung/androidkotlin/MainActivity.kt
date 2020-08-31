@@ -1,10 +1,20 @@
 package com.cheayoung.androidkotlin
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -39,6 +49,44 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             finish()
         }
 
+        button_push.setOnClickListener{
+            val NOTIFICATION_ID = 1001;
+            createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_DEFAULT,
+                false, getString(R.string.app_name), "App notification channel") // 1
+
+            val channelId = "$packageName-${getString(R.string.app_name)}" // 2
+            val title = "Android Developer"
+            val content = "Notifications in Android P"
+
+            val intent = Intent(baseContext, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            val pendingIntent = PendingIntent.getActivity(baseContext, 0,
+                intent, PendingIntent.FLAG_UPDATE_CURRENT)    // 3
+
+            val builder = NotificationCompat.Builder(this, channelId)  // 4
+            builder.setSmallIcon(R.drawable.robot)    // 5
+            builder.setContentTitle(title)    // 6
+            builder.setContentText(content)    // 7
+            builder.priority = NotificationCompat.PRIORITY_DEFAULT    // 8
+            builder.setAutoCancel(true)   // 9
+            builder.setContentIntent(pendingIntent)   // 10
+            builder.setDefaults(Notification.DEFAULT_VIBRATE) // 진동음이 울리게 하는 것
+            // 소리 알람은 DEFAULT_SOUND
+            val notificationManager = NotificationManagerCompat.from(this)
+            notificationManager.notify(NOTIFICATION_ID, builder.build())    // 11
+        }
+    }
+    private fun createNotificationChannel(context: Context, importance: Int, showBadge: Boolean,
+                                          name: String, description: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channelId = "${context.packageName}-$name"
+            val channel = NotificationChannel(channelId, name, importance)
+            channel.description = description
+            channel.setShowBadge(showBadge)
+
+            val notificationManager = context.getSystemService(NotificationManager::class.java)
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
